@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: draft
-  tag: dev
+  repository: iad.ocir.io/gse00014521/schmidtp0740/medbo-backend
+  tag: 0.0.1
   pullPolicy: IfNotPresent
 service:
   name: medbo-backend
