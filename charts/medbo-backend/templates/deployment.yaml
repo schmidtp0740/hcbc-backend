@@ -40,4 +40,19 @@ spec:
           timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
         resources:
 {{ toYaml .Values.resources | indent 12 }}
+      - name: mysql
+        image: "schmidtp0740/hc-bc-mysql:0.0.3"
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: "MYSQL_ROOT_PASSWORD"
+          value: "rootpass"
+        - name: "MYSQL_USER"
+          value: "dbuser"
+        - name: "MYSQL_PASSWORD"
+          value: "userpass"
+        - name: "MYSQL_DATABASE"
+          value: "myimagedb"
+        ports:
+        - containerPort: 3306
+          name: mysql
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}

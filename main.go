@@ -33,8 +33,8 @@ func main() {
 	// Get Patient Data
 	router.HandleFunc("/pd/{patientID}", pkg.GetPerson).Methods("GET")
 
-	// //Get All Rx Data History
-	// router.HandleFunc("/rxledger", GetAllRx).Methods("GET")
+	//Get All Rx Data History
+	router.HandleFunc("/rxledger", pkg.GetAllRx).Methods("GET")
 
 	// Get Rx Data
 	router.HandleFunc("/rx/{patientID}", pkg.GetRx).Methods("GET")

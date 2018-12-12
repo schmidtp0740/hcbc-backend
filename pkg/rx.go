@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"os"
 	"strconv"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -41,7 +40,7 @@ func GetAllRx(w http.ResponseWriter, r *http.Request) {
 	blockVariable := getBlockchainVariables()
 
 	// setup conn to mysql
-	db, err := sql.Open("mysql", "dbuser:userpass@tcp("+os.Getenv("dbName")+":3306)/myimagedb")
+	db, err := sql.Open("mysql", "dbuser:userpass@tcp(localhost:3306)/myimagedb")
 	if err != nil {
 		fmt.Println("err setting up connextion")
 		return
