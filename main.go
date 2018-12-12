@@ -21,11 +21,11 @@ func main() {
 	// // retrieve heart rate data for a patient
 	router.HandleFunc("/hr/{patientID}", pkg.GetHeartRateHistoryForPatient).Methods("GET")
 
-	// // retreive hack status
-	// router.HandleFunc("/bcs", GetStatus).Methods("GET")
+	// retreive hack status
+	router.HandleFunc("/bcs", pkg.GetStatus).Methods("GET")
 
-	// // push hack status
-	// router.HandleFunc("/hack", SetStatus).Methods("GET")
+	// push hack status
+	router.HandleFunc("/hack", pkg.SetStatus).Methods("GET")
 
 	// Get All Patient Data
 	router.HandleFunc("/pd", pkg.GetPeople).Methods("GET")
@@ -33,32 +33,32 @@ func main() {
 	// Get Patient Data
 	router.HandleFunc("/pd/{patientID}", pkg.GetPerson).Methods("GET")
 
-	// //Get All Rx Data History
-	// router.HandleFunc("/rxledger", GetAllRx).Methods("GET")
+	//Get All Rx Data History
+	router.HandleFunc("/rxledger", pkg.GetAllRx).Methods("GET")
 
-	// // Get Rx Data
-	// router.HandleFunc("/rx/{patientID}", GetRx).Methods("GET")
+	// Get Rx Data
+	router.HandleFunc("/rx/{patientID}", pkg.GetRx).Methods("GET")
 
-	// // Insert Rx
-	// router.HandleFunc("/rx", InsertRx).Methods("POST")
+	// Insert Rx
+	router.HandleFunc("/rx", pkg.InsertRx).Methods("POST")
 
-	// // Fill Rx
-	// router.HandleFunc("/rx", FillRx).Methods("PATCH")
+	// Fill Rx
+	router.HandleFunc("/rx", pkg.FillRx).Methods("PATCH")
 
-	// // Approve Rx
-	// router.HandleFunc("/rx", ApproveRx).Methods("PUT")
+	// Approve Rx
+	router.HandleFunc("/rx", pkg.ApproveRx).Methods("PUT")
 
-	// // Get Insurance
-	// router.HandleFunc("/insurance/{patientID}", GetInsurance).Methods("GET")
+	// Get Insurance
+	router.HandleFunc("/insurance/{patientID}", pkg.GetInsurance).Methods("GET")
 
-	// // New Insurance
-	// router.HandleFunc("/insurance", insertInsurance).Methods("POST")
+	// New Insurance
+	router.HandleFunc("/insurance", pkg.InsertInsurance).Methods("POST")
 
-	// // get blood pressure history
-	// router.HandleFunc("/bp/{patientID}", getBloodPressure).Methods("GET")
+	// get blood pressure history
+	router.HandleFunc("/bp/{patientID}", pkg.GetBloodPressure).Methods("GET")
 
-	// // insert blood pressure message
-	// router.HandleFunc("/bp", insertBloodPressure).Methods("POST")
+	// insert blood pressure message
+	router.HandleFunc("/bp", pkg.InsertBloodPressure).Methods("POST")
 
 	fmt.Println("Listening on port: 8080")
 	c := cors.AllowAll()
@@ -69,5 +69,5 @@ func main() {
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	w.Write([]byte(`medbo-backend-service`))
+	w.Write([]byte(`medbo-backend`))
 }
