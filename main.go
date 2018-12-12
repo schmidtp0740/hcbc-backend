@@ -69,5 +69,5 @@ func main() {
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	w.Write([]byte(`medbo-backend`))
+	w.Write([]byte(`moes-backend`))
 }
