@@ -41,7 +41,7 @@ spec:
         resources:
 {{ toYaml .Values.resources | indent 12 }}
       - name: mysql
-        image: "iad.ocir.io/gse00014521/medbo-mysql:0.0.4"
+        image: "iad.ocir.io/gse00014521/hcbc-mysql:0.0.4"
         imagePullPolicy: IfNotPresent
         env:
         - name: "MYSQL_ROOT_PASSWORD"

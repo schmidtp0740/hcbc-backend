@@ -7,7 +7,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
-	"github.com/schmidtp0740/medbo-backend/pkg"
+	"github.com/schmidtp0740/hcbc-backend/pkg"
 )
 
 func main() {
