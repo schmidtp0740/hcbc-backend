@@ -1,4 +1,4 @@
 FROM scratch
 EXPOSE 8080
-ENTRYPOINT ["/medbo-backend"]
+ENTRYPOINT ["/hcbc-backend"]
 COPY ./bin/ /

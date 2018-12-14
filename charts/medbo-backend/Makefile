@@ -1,6 +1,6 @@
 CHART_REPO := http://jenkins-x-chartmuseum:8080
 CURRENT=$(pwd)
-NAME := medbo-backend
+NAME := hcbc-backend
 OS := $(shell uname)
 VERSION := $(shell cat ../../VERSION)
 

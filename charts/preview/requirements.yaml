@@ -9,5 +9,5 @@ dependencies:
   repository: https://chartmuseum.build.cd.jenkins-x.io
   version: 2.3.56
 - alias: preview
-  name: medbo-backend
-  repository: file://../medbo-backend
+  name: hcbc-backend
+  repository: file://../hcbc-backend
